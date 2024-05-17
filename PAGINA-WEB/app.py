@@ -1,6 +1,8 @@
 from flask import Flask, render_template,  request, redirect, url_for, jsonify
 from model.package_model.Persona import Persona
 from model.package_model.Administrador import Administrador
+from model.package_model.Colonia import Colonia
+from model.package_model.Cuadrilla import Cuadrilla
 from model.package_model.UsuarioDTO import UsuarioDTO
 
 app = Flask(__name__)
@@ -131,9 +133,41 @@ def usuarios():
 def gestionColonias():
     return render_template('GestionColonias.html')
 
+@app.route('/buscarPorNombreColonia', methods = ['POST'])
+def buscarPorNombreColonia():
+    data = request.json
+    nombreColonia = data.get('nombreColonia')
+    col = Colonia()
+    colonias = col.getColoniasPorNombre(nombreColonia)
+    # return render_template('/GestionColonias.html', colonias = colonias)
+    colonias_list = [list(colonia) for colonia in colonias]  
+    return jsonify(colonias=colonias_list)
+
+@app.route('/agregarColonia', methods = ['POST'])
+def agregarColonia():
+    data = request.json
+    coloniaId = data.get('coloniaId')
+    col = Colonia()
+
+    resultado = col.agregarColonia(coloniaId)
+    return jsonify( resultado = resultado)
+
 @app.route('/colonias', methods = ['GET'])
 def colonias():
-    return render_template('VerColonias.html')
+    col = Colonia()
+    colonias = col.buscarColonias()
+    return render_template('VerColonias.html', colonias = colonias)
+
+@app.route('/gestionCuadrillas', methods = ['GET'])
+def gestionCuadrillas():
+    cuadrilla = Cuadrilla()
+    jefes = cuadrilla.getJefeSinCuadrilla()
+    trabajadores = cuadrilla.getTrabajadoresSinCuadrilla()
+    return render_template('GestionCuadrillas.html', jefes = jefes, trabajadores = trabajadores)
+
+@app.route('/cuadrillas', methods = ['GET'])
+def cuadrillas():
+    return render_template('VerCuadrillas.html')
 
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():

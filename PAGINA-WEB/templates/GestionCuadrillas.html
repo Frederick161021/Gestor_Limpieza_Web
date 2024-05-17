@@ -17,20 +17,32 @@
             <h2 class="subtitulo">NOMBRE DE LA CUADRILLA:</h2>
             <input type="text" id="nombreCuadrilla">
             <h3>SELECCIONE UN JEFE DE CUADRILLA</h3>
-            <select id="jefeCuadrilla"></select>
-            <button class="boton-azul">
-                <span style="font-weight: bold;">Agregar Jefe</span>
-            </button>
-            <button class="boton-amarillo">
-                <span style="font-weight: bold;">Cambiar Jefe</span>
-            </button>
+            <select id="jefeCuadrilla">
+                {% if not jefes %}
+                <option value="0">Da de alta un Jefe!</option>
+                {% else %}
+                {% for jefe in jefes%}
+                <option value="{{jefe[0]}}">{{jefe[1]}} {{jefe[2]}}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
             <h3>MIEMBROS DISPONIBLES PARA SU CUADRILLA</h3>
-            <select id="miembrosDisponibles"></select>
+            <select id="miembrosDisponibles">
+                {% if not trabajadores %}
+                    <option value="0">Da de alta un trabajador!</option>
+                {% else %}
+                    {% for trabajador in trabajadores %}
+                    <option value="{{trabajador[0]}}">{{trabajador[1]}} {{trabajador[2]}}</option>
+                    {% endfor %}
+                {% endif %}
+            </select>
             <button class="boton-azul">
                 <span style="font-weight: bold;">Agregar Empleado</span>
             </button>
             <h3>SU CUADRILLA SE CONFORMA POR</h3>
-            <textarea id="cuadrilla" rows="4"></textarea>
+            <textarea id="cuadrilla" rows="4" readonly></textarea>
+            <h3>Id del empleado que desea eliminar de la cuadrilla:</h3>
+            <input type="text">
             <button class="boton-rojo">
                 <span style="font-weight: bold;">Eliminar Empleado</span>
             </button>
@@ -54,8 +66,8 @@
             </button>
         </div>
     </div>
-    <button onclick="window.location.href = 'MenuAdmin.html';" class="boton-rojo"><b>MENU</b></button>
-    <button onclick="window.location.href = 'VerCuadrillas.html';" class="boton-naranja"><b>VER CUADRILLAS</b></button>
+    <button onclick="window.location.href = 'menuAdmin';" class="boton-rojo"><b>MENU</b></button>
+    <button onclick="window.location.href = 'cuadrillas';" class="boton-naranja"><b>VER CUADRILLAS</b></button>
 
 </body>
 </html>

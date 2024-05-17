@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Colonias</title>
     <link rel="stylesheet" href="../static/style/GestionColonias.css">
+    <script src="../static/js/sweetalert2.all.min.js"></script>
+    <script src ="../static/js/jquery-3.4.1.js"></script>
+    <script src ="../static/js/popper.min.js"></script>
+    <script src="../static/js/GestionColonias.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,30 +17,28 @@
         <div class="contenedor-gris">
             <h2 class="subtitulo">ESCRIBA EL NOMBRE DE LA COLONIA PARA CONSULTAR SU ID:</h2>
             <input type="text" id="nombreColonia">
-            <button class="boton-naranja">Consultar Colonia</button>
+            <button id="btnConsultar" class="boton-naranja">Consultar Colonia</button>
         </div>
-        <table>
+        <table id="tabla">
             <thead>
                 <tr>
                     <th>ID COLONIA</th>
                     <th>NOMBRE</th>
                     <th>CIUDAD</th>
-                    <th>LATITUD</th>
-                    <th>LONGITUD</th>
+                    <th>CODIGO POSTAL</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Aquí puedes agregar filas de datos si es necesario -->
             </tbody>
         </table>
         <div class="contenedor-agregar">
             <label for="idColonia">ID:</label>
             <input type="text" id="idColonia">
-            <button class="boton-verde">AGREGAR</button>
+            <button id="btnAgregar" class="boton-verde">AGREGAR</button>
         </div>
     </div>
 
     <button onclick="window.location.href = 'menuAdmin';" class="boton-rojo"><b>MENU</b></button>
-    <button onclick="window.location.href = 'VerColonias.html';" class="boton-naranja"><b>VER COLONIAS</b></button>
+    <button onclick="window.location.href = 'colonias';" class="boton-naranja"><b>VER COLONIAS</b></button>
 </body>
 </html>

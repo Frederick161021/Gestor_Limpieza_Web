@@ -16,19 +16,22 @@
             <th class="center">ID COLONIA </th>
             <th class="center">NOMBRE</th>
             <th class="center">CIUDAD</th>
+            <th class="center">CODIGO POSTAL</th>
             <th class="center">LATITUD</th>
             <th class="center">LONGITUD</th>
           </tr>
       </thead>
       <tbody>
-      
-         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-         </tr>
+        {% for colonia in colonias %}
+        <tr>
+          <td>{{colonia[0]}}</td>
+          <td>{{colonia[2]}}</td>
+          <td>{{colonia[6]}}</td>
+          <td>{{colonia[1]}}</td>
+          <td>{{colonia[7]}}</td>
+          <td>{{colonia[8]}}</td>
+        </tr>
+        {% endfor %}
       </tbody>
     </table>
     <button onclick="window.location.href = 'gestionColonias';" class="return-button"><b>VOLVER</b></button>
