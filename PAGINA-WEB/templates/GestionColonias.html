@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Colonias</title>
+    <link rel="stylesheet" href="../static/style/GestionColonias.css">
+</head>
+<body>
+    <div class="container">
+        <img src="../static/img/punto.png" class="icono">
+        <h1>GESTION DE COLONIAS</h1>
+        <div class="contenedor-gris">
+            <h2 class="subtitulo">ESCRIBA EL NOMBRE DE LA COLONIA PARA CONSULTAR SU ID:</h2>
+            <input type="text" id="nombreColonia">
+            <button class="boton-naranja">Consultar Colonia</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID COLONIA</th>
+                    <th>NOMBRE</th>
+                    <th>CIUDAD</th>
+                    <th>LATITUD</th>
+                    <th>LONGITUD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí puedes agregar filas de datos si es necesario -->
+            </tbody>
+        </table>
+        <div class="contenedor-agregar">
+            <label for="idColonia">ID:</label>
+            <input type="text" id="idColonia">
+            <button class="boton-verde">AGREGAR</button>
+        </div>
+    </div>
+
+    <button onclick="window.location.href = 'menuAdmin';" class="boton-rojo"><b>MENU</b></button>
+    <button onclick="window.location.href = 'VerColonias.html';" class="boton-naranja"><b>VER COLONIAS</b></button>
+</body>
+</html>

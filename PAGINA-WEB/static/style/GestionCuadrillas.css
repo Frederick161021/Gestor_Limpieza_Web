@@ -1,0 +1,100 @@
+body {
+    background-color: #ffcccc; /* Rosa pastel */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+}
+
+.icono {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.imagen {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.contenedor-amarillo {
+    background-color: #ffffcc; /* Amarillo pastel */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    font-size: 1.5em; /* Tamaño de subtitulo */
+}
+
+h3 {
+    margin-top: 20px; /* Separación entre títulos */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.boton-azul {
+    background-color: #73f6ff; /* Azul marino */
+    color: rgb(0, 0, 0);
+}
+
+.boton-amarillo {
+    background-color: #ffd700; /* Amarillo */
+    color: black;
+}
+
+.boton-rojo {
+    background-color: #ff0000; /* Rojo */
+    color: rgb(0, 0, 0);
+}
+
+.contenedor-morado {
+    background-color: #ffcdff; /* Morado */
+    padding: 20px;
+    text-align: center;
+}
+
+.boton-verde {
+    background-color: #4dff4d; /* Verde */
+    color: rgb(0, 0, 0);
+}
+
+.boton-naranja {
+    background-color: orange; /* Naranja */
+    color: rgb(0, 0, 0);
+}

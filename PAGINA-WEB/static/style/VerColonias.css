@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #edeeed; /* Verde pastel */
+  }
+  
+  .container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #c2f1f1; /* Verde turquesa */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .icon {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .title {
+    text-align: center;
+    background-color: #dcddd1; /* Verde turquesa */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #F0FFFF; /* Verde pastel */
+  }
+  
+  .return-button {
+    position: relative;
+    left: 10px;
+    background-color: #FFFF00; /* Amarillo */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 200px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios</title>
+  <script src="../static/js/VerUsuarios.js"></script>
+  <script src="../static/js/sweetalert2.all.min.js"></script>
+    <script src ="../static/js/jquery-3.4.1.js"></script>
+    <script src ="../static/js/popper.min.js"></script>
+  <link rel="stylesheet" href="../static/style/VerUsuarios.css">
+</head>
+<body>
+  <div class="container">
+    <img src="../static/img/punto.png" alt="Icono" class="icon">
+    <h2 class="title">USUARIOS</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ROL</th>
+          <th>NOMBRE</th>
+          <th>APELLIDO PATERNO</th>
+          <th>APELLIDO MATERNO</th>
+          <th>TELEFONO</th>
+          <th>CORREO</th>
+          <th>USUARIO</th>
+          <th>CONTRASEÑA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+          <td>{{usuario[0]}}</td>
+          <td>{{usuario[1]}}</td>
+          <td>{{usuario[2]}}</td>
+          <td>{{usuario[3]}}</td>
+          <td>{{usuario[4]}}</td>
+          <td>{{usuario[5]}}</td>
+          <td>{{usuario[6]}}</td>
+          <td>{{usuario[7]}}</td>
+          <td>{{usuario[8]}}</td>
+         </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <button onclick="window.location.href = 'gestionUsuarios';" class="return-button"><b>VOLVER</b></button>
+  </div>
+</body>
+</html>

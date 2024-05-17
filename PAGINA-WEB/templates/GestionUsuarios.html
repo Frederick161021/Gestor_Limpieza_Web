@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios</title>
+  <script src="../static/js/sweetalert2.all.min.js"></script>
+  <script src ="../static/js/jquery-3.4.1.js"></script>
+  <script src ="../static/js/popper.min.js"></script>
+  <script src="../static/js/GestionUsuarios.js"></script>
+  <link rel="stylesheet" href="../static/style/GestionUsuarios.css">
+</head>
+<body>
+  <div class="container">
+    <div class="yellow-container">
+      <img src="../static/img/punto.png" alt="Icono" class="icon">
+      <img src="../static/img/añadir-usuario.png" alt="Imagen de usuario" class="user-image">
+      <div class="user-type">
+        <label for="tipo-usuario">Tipo de Usuario:</label>
+        <select name="tipo-usuario" id="tipo-usuario">
+          <option value="1">Administrador</option>
+          <option value="2">Jefe de Cuadrilla</option>
+          <option value="3">Trabajador</option>
+        </select>
+      </div>
+      <div class="blue-container">
+        <label for="id">DEFINA UN ID:</label>
+        <input type="text" id="id" name="id">
+        <label for="nombre">NOMBRE:</label>
+        <input type="text" id="nombre" name="nombre">
+        <label for="apellido-paterno">APELLIDO PATERNO:</label>
+        <input type="text" id="apellido-paterno" name="apellido-paterno">
+        <label for="apellido-materno">APELLIDO MATERNO:</label>
+        <input type="text" id="apellido-materno" name="apellido-materno">
+        <label for="usuario">USUARIO:</label>
+        <input type="text" id="usuario" name="usuario">
+        <label for="contrasena">CONTRASEÑA:</label>
+        <input type="text" id="contrasena" name="contrasena">
+        <label for="telefono">TELÉFONO:</label>
+        <input type="text" id="telefono" name="telefono">
+        <label for="correo">CORREO:</label>
+        <input type="email" id="correo" name="correo">
+        <br>
+        <button id="btnAgregar" style="color: white; background-color: green;">AGREGAR</button>
+        <button id="btnBuscar" style="color: white; background-color: orangered;">BUSCAR</button>
+        <button id="btnActualizar" style="color: white; background-color: lightskyblue;">ACTUALIZAR</button>
+        <button id="btnEliminar" style="color: white; background-color: red;">ELIMINAR</button>
+      </div>
+      <button onclick="window.location.href = 'menuAdmin';" class="menu-button"><b>MENU</b></button>
+      <button onclick="window.location.href = 'usuarios';" class="results-button"><b>VER USUARIOS</b></button>
+    </div>
+  </div>
+</body>
+</html>

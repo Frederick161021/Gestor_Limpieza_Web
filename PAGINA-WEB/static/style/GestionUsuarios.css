@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB; /* Azul claro */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .yellow-container {
+    background-color: #FFFF99; /* Amarillo pastel */
+    padding: 8px;
+    border-radius: 6px;
+    position: relative;
+  }
+  
+  .blue-container {
+    background-color: #b0e6d6; /* Azul pastel */
+    padding: 8px;
+    border-radius: 6px;
+    margin-top: 8px;
+  }
+  
+  .icon {
+    width: 30px; /* Tamaño del icono */
+    height: auto;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+  }
+  
+  .user-image {
+    width: 60px; /* Tamaño de la imagen de usuario */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+  }
+  
+  .user-type {
+    display: block;
+    width: calc(100% - 16px);
+    padding: 4px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .blue-container label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  
+  .blue-container input[type="text"],
+  .blue-container input[type="password"],
+  .blue-container input[type="email"] {
+    width: calc(100% - 16px);
+    padding: 6px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+  }
+  
+  .menu-button,
+  .results-button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 8px; /* Agregamos margen superior */
+  }
+  
+  .menu-button {
+    background-color: #FF99CC; /* Rosa */
+  }
+  
+  .results-button {
+    background-color: #FFA500; /* Naranja claro */
+    left: 40px; /* Ajustamos la posición hacia la izquierda */
+    bottom: 0px;
+  }
+  
+  

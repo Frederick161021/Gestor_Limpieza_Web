@@ -1,0 +1,85 @@
+body {
+    background-color: #f0f0f0; /* Color de fondo */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+}
+
+.icono {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contenedor-gris {
+    background-color: #ccc; /* Color de fondo gris */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.subtitulo {
+    font-size: 1.2em; /* Tamaño de subtitulo */
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+.contenedor-agregar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-verde {
+    background-color: #aaffaa; /* Verde claro */
+    color: black;
+}
+
+.boton-rojo {
+    background-color: #ff3333; /* Rojo */
+    color: white;
+}
+
+.boton-naranja {
+    background-color: #ffa500; /* Naranja */
+    color: white;
+}

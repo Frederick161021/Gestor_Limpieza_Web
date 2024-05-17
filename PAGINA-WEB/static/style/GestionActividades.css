@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+}
+
+.lado-izquierdo {
+    flex: 1;
+    background-color: #a8e6cf; /* Verde pistache */
+    padding: 20px;
+}
+
+.lado-derecho {
+    flex: 1;
+    background-color: #b4aee8; /* Azul cielo */
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.imagen {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-rojo {
+    background-color: #ff3333; /* Rojo */
+    color: white;
+}
+
+.boton-amarillo {
+    background-color: #ffff66; /* Amarillo */
+    color: black;
+}
+
+.boton-naranja {
+    background-color: #ffa500; /* Naranja */
+    color: white;
+}

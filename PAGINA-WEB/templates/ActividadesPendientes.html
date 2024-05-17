@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVIDADES PENDIENTES</title>
+    <link rel="stylesheet" href="../static/style/ActividadesPendientes.css">
+    <script src="../static/js/sweetalert2.all.min.js"></script>
+    <script src ="../static/js/jquery-3.4.1.js"></script>
+    <script src ="../static/js/popper.min.js"></script>
+    <script src="../static/js/ActividadesPendientes.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="../static/img/punto.png" alt="Icono" class="icon">
+        <h2 class="title">ACTIVIDADES PENDIENTES</h2>
+        {% if not actividadesPendientes %}
+        <h1>NO TIENES NINGUNA ACTIVIDAD PENDIENTE!!</h1>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th class="center">ID ACTIVIDAD</th>
+                    <th class="center">ACTIVIDAD</th>
+                    <th class="center">COLONIA</th>
+                    <th class="center">FECHA ASIGNACION</th>
+                    {% if rolId == 2 %}
+                        <th class="center">Terminar</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for actividad in actividadesPendientes %}
+                <tr>
+                    <td>{{ actividad[0] }}</td>
+                    <td>{{ actividad[1] }}</td>
+                    <td>{{ actividad[2] }}</td>
+                    <td>{{ actividad[3] }}</td>
+                    {% if rolId == 2 %}
+                    <td><button value= "{{actividad[0]}}" style="color: white; background-color: red;">TERMINAR</button></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% if rolId == 2 %}
+        <button onclick="window.location.href = 'menuJefe';" class="return-button"><b>VOLVER</b></button>
+        {% else %}
+        <button id="btnSalir" class="return-button"><b>SALIR</b></button>
+        {% endif %}
+    </div>
+</body>
+</html>

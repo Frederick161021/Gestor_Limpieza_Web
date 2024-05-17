@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <script src="../static/js/MenuAdmin.js"></script>
+  <script src="../static/js/sweetalert2.all.min.js"></script>
+  <script src ="../static/js/jquery-3.4.1.js"></script>
+  <script src ="../static/js/popper.min.js"></script>
+  <link rel="stylesheet" href="../static/style/MenuAdmin.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <img src="../static/img/punto.png" alt="Icono" class="icon">
+      <h2 class="welcome-message">Bienvenido Administrador</h2>
+      <div class="buttons">
+        <button class="button" onclick="window.location.href = 'gestionUsuarios';"><img src="../static/img/agregar-usuario (1).png" alt="Icono" class="button-icon"><b>GESTION DE USUARIOS</b></button>
+        <button class="button" onclick="window.location.href = 'GestionCuadrillas.html';"><img src="../static/img/cola.png" alt="Icono" class="button-icon"><b>GESTION DE CUADRILLAS</b></button>
+        <button class="button" onclick="window.location.href = 'gestionColonias';"><img src="../static/img/chiquita.png" alt="Icono" class="button-icon"><b>GESTION DE COLONIAS</b></button>
+        <button class="button" onclick="window.location.href = 'GestionActividades.html';"><img src="../static/img/crucigrama.png" alt="Icono" class="button-icon"><b>GESTION DE ACTIVIDADES</b></button>
+        <button class="button" onclick="window.location.href = 'ReporteActividades.html';"><img src="../static/img/reporte.png" alt="Icono" class="button-icon"><b>REPORTE DE ACTIVIDADES</b></button>
+      </div>
+      <button id="btnSalir" class="logout-button"><b>SALIR</b></button>
+
+    </div>
+  </div>
+</body>
+</html>

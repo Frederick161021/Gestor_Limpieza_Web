@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ADD8E6; /* Azul claro */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .content {
+    background-color: #F0F0F0; /* Gris claro */
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .icon {
+    width: 50px; /* Tamaño del icono */
+    height: auto;
+  }
+  
+  .welcome-message {
+    background-color: #F0F0F0; /* Gris claro */
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #70b5ff; /* Azul pastel oscuro */
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-icon {
+    margin-right: 10px;
+    width: 40px; /* Tamaño del icono */
+    height: auto;
+  }
+  
+  .logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF6347; /* Rojo */
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px; /* Mueve el botón "Salir" hacia abajo */
+  }
+  
+  .logout-button:hover {
+    background-color: #D32F2F; /* Rojo oscuro */
+  }
+  

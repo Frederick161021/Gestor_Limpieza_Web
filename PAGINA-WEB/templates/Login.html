@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="../static/style/Login.css">
+  <script src="../static/js/sweetalert2.all.min.js"></script>
+  <script src ="../static/js/jquery-3.4.1.js"></script>
+  <script src ="../static/js/popper.min.js"></script>
+  <script src="../static/js/Login.js"></script>
+</head>
+<body>
+  <h1 class="welcome-message">Bienvenido Usuario</h1>
+  <div class="container">
+    <div class="left-side">
+      <img src="../static/img/equipo-de-limpieza.png" alt="Imagen de usuario" class="image">
+    </div>
+    <div class="right-side">
+      <div class="user-info">
+        <img src="../static/img/añadir-usuario.png" alt="Icono usuario" class="icon">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario">
+      </div>
+      <div class="password-info">
+        <img src="../static/img/bloquear.png" alt="Icono candado" class="icon">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña">
+      </div>
+      <button type="button" id ="ingresarButton">Ingresar</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- <script>
+  $(document).ready(function(){
+    alert("jquey ok")
+  });
+</script> -->

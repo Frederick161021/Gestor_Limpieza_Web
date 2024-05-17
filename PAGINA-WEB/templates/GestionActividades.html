@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades</title>
+    <link rel="stylesheet" href="../static/style/GestionActividades.css">
+</head>
+<body>
+    <div class="container">
+        <div class="lado-izquierdo">
+            <h2 class="titulo">CREAR NUEVA ACTIVIDAD</h2>
+            <img src="../static/img/tarea.png" class="imagen">
+            <label for="idActividad"><b>ID ACTIVIDAD:</b></label>
+            <input type="text" id="idActividad">
+            <label for="descripcion"><b>Descripción:</b></label>
+            <textarea id="descripcion" rows="4"></textarea>
+            <label for="fechaAgendada"><b>FECHA AGENDADA:</b></label>
+            <input type="date" id="fechaAgendada">
+            <button onclick="window.location.href = 'MenuAdmin.html';" class="boton-rojo"><b>MENU</b></button>
+          
+        </div>
+        <div class="lado-derecho">
+            <h2 class="titulo">ASIGNAR ACTIVIDAD</h2>
+            <img src="../static/img/asignar.png" class="imagen">
+            <label for="seleccionarCuadrilla"><b>SELECCIONAR CUADRILLA:</b></label>
+            <select id="seleccionarCuadrilla"></select>
+            <label for="seleccionarColonia"><b>SELECCIONAR COLONIA:</b></label>
+            <select id="seleccionarColonia"></select>
+            <button class="boton-amarillo">GUARDAR ASIGNACIÓN</button>
+
+  
+    <button onclick="window.location.href = 'VerAsignaciones.html';" class="boton-naranja"><b>VER ASIGNACIONES</b></button>
+
+           
+        </div>
+    </div>
+</body>
+</html>

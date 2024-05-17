@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="../static/style/MenuJefe.css">
+  <script src="../static/js/sweetalert2.all.min.js"></script>
+  <script src ="../static/js/jquery-3.4.1.js"></script>
+  <script src ="../static/js/popper.min.js"></script>
+  <script src="../static/js/MenuJefe.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <img src="../static/img/punto.png" alt="Icono" class="icon">
+      <h2 class="welcome-message">Bienvenido Jefe de Cuadrilla</h2>
+      <div class="buttons">
+        <button class="button" onclick="window.location.href = 'ActividadesAceptar.html';"><img src="../static/img/reporte.png" alt="Icono" class="button-icon"><b>ACTIVIDADES POR ACEPTAR</b></button>
+        <button class="button" onclick="window.location.href = 'actividadesPendientes';"><img src="../static/img/reloj (1).png" alt="Icono" class="button-icon"><b>ACTIVIDADES PENDIENTES</b></button>
+        <button class="button" onclick="window.location.href = 'Actividades completadas';"><img src="../static/img/reporte.png" alt="Icono" class="button-icon"><b>ACTIVIDADES TERMINADAS</b></button>
+
+      </div>
+      <button id="btnSalir" class="logout-button"><b>SALIR</b></button>
+
+    </div>
+  </div>
+</body>
+</html>
