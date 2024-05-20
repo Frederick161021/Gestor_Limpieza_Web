@@ -238,6 +238,18 @@ def cuadrillas():
     trabajadores = cuadrilla.getTrabajadoresCuadrillas()
     return render_template('VerCuadrillas.html', cuadrillas = cuadrillas, trabajadores = trabajadores)
 
+@app.route('/gestionActividades', methods=['GET','POST'])
+def gestionActividades():
+    return render_template('GestionActividades.html')
+
+@app.route('/actividades', methods=['GET'])
+def actividades():
+    return render_template('VerAsignaciones.html')
+
+@app.route('/reporteActividades', methods=['GET', 'POST'])
+def reporteActividades():
+    return render_template('ReporteActividades.html')
+
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():
     usuario = UsuarioDTO()
