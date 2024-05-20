@@ -15,19 +15,27 @@
         <tr>
             <th class="center">ID CUADRILLA</th>
             <th class="center">NOMBRE</th>
+            <th class="center">Estatus</th>
             <th class="center">JEFE DE CUADRILLA</th>
             <th class="center">INTEGRANTES DE LA CUADRILLA</th>
           </tr>
-      </thead>
+      </thead
       <tbody>
-      
-         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-         </tr>
+          {% for cuadrilla in cuadrillas %}
+          <tr>
+            <td>{{cuadrilla[0]}}</td>
+            <td>{{cuadrilla[1]}}</td>
+            <td>{{cuadrilla[2]}}</td>
+            <td>{{cuadrilla[3]}}</td>
+            <td>
+              {% for trabajador in trabajadores %}
+                {% if trabajador[0] == cuadrilla[0] %}
+                {{trabajador[1]}}, 
+                {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
       </tbody>
     </table>
     <button onclick="window.location.href = 'gestionCuadrillas';" class="return-button"><b>VOLVER</b></button>

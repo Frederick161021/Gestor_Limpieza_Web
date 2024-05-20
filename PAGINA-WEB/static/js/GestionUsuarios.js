@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', function(){
                     }
                     else if(response['usuario'][1] == 2){
                         var selectElement = document.getElementById('tipo-usuario');
-                        selectElement.value = "1";
+                        selectElement.value = "2";
                     }
                     else if (response['usuario'][1] == 3){
-                        var srelectElement = document.getElementById('tipo-usuario');
-                        selectElement.value = "1";
+                        var selectElement = document.getElementById('tipo-usuario');
+                        selectElement.value = "3";
                     }
 
                     

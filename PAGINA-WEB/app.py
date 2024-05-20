@@ -87,7 +87,7 @@ def buscarUsuario():
 
     admin = Administrador()
     usuario = admin.buscarPersona(id)
-
+    print(usuario)
     if not usuario:
         return jsonify({"usuario": None}), 401
     else: 
@@ -165,9 +165,78 @@ def gestionCuadrillas():
     trabajadores = cuadrilla.getTrabajadoresSinCuadrilla()
     return render_template('GestionCuadrillas.html', jefes = jefes, trabajadores = trabajadores)
 
+@app.route('/agregarJefeCuadrilla', methods=['POST'])
+def agregarJefeCuadrilla():
+    data = request.json
+    jefeId = data.get('jefeId')
+    cuadrillaId = data.get('cuadrillaId')
+    cuadrilla = Cuadrilla()
+    resultado = cuadrilla.agregarTrabajadorACuadrilla(jefeId, cuadrillaId)
+    return jsonify({"resultado": resultado})
+
+@app.route('/agregarTrabajadorCuadrilla', methods=['POST'])
+def agregarTrabajadorCuadrilla():
+    data = request.json
+    trabajadorId = data.get('trabajadorId')
+    cuadrillaId = data.get('cuadrillaId')
+    cuadrilla = Cuadrilla()
+    resultado = cuadrilla.agregarTrabajadorACuadrilla(trabajadorId, cuadrillaId)
+    return jsonify({"resultado": resultado})
+
+@app.route('/eliminarTrabajadorCuadrilla', methods=['POST'])
+def eliminarTrabajadorCuadrilla():
+    data = request.json
+    trabajadorId = data.get('trabajadorId')
+    cuadrillaId = data.get('cuadrillaId')
+    cuadrilla = Cuadrilla()
+    resultado = cuadrilla.eliminarTrabajadorACuadrilla(trabajadorId, cuadrillaId)
+    return jsonify({"resultado": resultado})
+
+@app.route('/crearCuadrilla', methods=['POST'])
+def crearCuadrilla():
+    data = request.json
+    nombreCuadrilla = data.get('nombreCuadrilla')
+    cuadrilla = Cuadrilla()
+    resultado = cuadrilla.crearCuadrilla(nombreCuadrilla)
+    id = cuadrilla.getCuadrillaId(nombreCuadrilla)
+    return jsonify({'resultado': resultado, 'id':id})
+
+
+@app.route('/consultarCuadrilla', methods=['POST'])
+def consultarCuadrilla():
+    data = request.json
+    cuadrillaId = data.get('cuadrillaId')
+    cuadrilla = Cuadrilla()
+    nombreCuadrilla = cuadrilla.getNombreCuadrilla(cuadrillaId)
+    empleados = cuadrilla.getEmpleadosCuadrilla(cuadrillaId)
+    return jsonify({'nombreCuadrilla': nombreCuadrilla, 'empleados': empleados})
+
+
+@app.route('/actualizarCuadrilla', methods=['POST'])
+def actualizarCuadrilla():
+    data = request.json
+    cuadrillaId = data.get('cuadrillaId')
+    nombreCuadrilla = data.get('nombreCuadrilla')
+    cuadrilla = Cuadrilla()
+    resultado = cuadrilla.actualizarCuadrilla(cuadrillaId, nombreCuadrilla)
+    return jsonify({'resultado': resultado})
+
+
+@app.route('/eliminarCuadrilla', methods=['POST'])
+def eliminarCuadrilla():
+    data = request.json
+    cuadrillaId = data.get('cuadrillaId')
+    cuadrilla = Cuadrilla()
+    resultado = cuadrilla.eliminarCuadrilla(cuadrillaId)
+    return jsonify({'resultado': resultado})
+
+
 @app.route('/cuadrillas', methods = ['GET'])
 def cuadrillas():
-    return render_template('VerCuadrillas.html')
+    cuadrilla = Cuadrilla()
+    cuadrillas = cuadrilla.getCuadrillas()
+    trabajadores = cuadrilla.getTrabajadoresCuadrillas()
+    return render_template('VerCuadrillas.html', cuadrillas = cuadrillas, trabajadores = trabajadores)
 
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():

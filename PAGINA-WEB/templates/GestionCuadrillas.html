@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Cuadrillas</title>
+    <script src="../static/js/sweetalert2.all.min.js"></script>
+    <script src="../static/js/jquery-3.4.1.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/GestionCuadrillas.js"></script>
     <link rel="stylesheet" href="../static/style/GestionCuadrillas.css">
 </head>
 <body>
@@ -26,6 +30,9 @@
                 {% endfor %}
                 {% endif %}
             </select>
+            <button id="agregarJefe" class="boton-azul">
+                <span style="font-weight: bold;">Asignar Jefe</span>
+            </button>
             <h3>MIEMBROS DISPONIBLES PARA SU CUADRILLA</h3>
             <select id="miembrosDisponibles">
                 {% if not trabajadores %}
@@ -36,31 +43,31 @@
                     {% endfor %}
                 {% endif %}
             </select>
-            <button class="boton-azul">
+            <button id="agregarTrabajador" class="boton-azul">
                 <span style="font-weight: bold;">Agregar Empleado</span>
             </button>
             <h3>SU CUADRILLA SE CONFORMA POR</h3>
             <textarea id="cuadrilla" rows="4" readonly></textarea>
             <h3>Id del empleado que desea eliminar de la cuadrilla:</h3>
-            <input type="text">
-            <button class="boton-rojo">
+            <input type="text" id="idTrabajadorEliminar">
+            <button id="eliminarTrabajador" class="boton-rojo">
                 <span style="font-weight: bold;">Eliminar Empleado</span>
             </button>
         </div>
         <div class="contenedor-morado">
-            <button class="boton-verde">
+            <button id="guardarCuadrilla" class="boton-verde">
                 <img src="../static/img/disco-flexible.png" alt="Guardar"><br>
                 <span style="font-weight: bold;">Guardar</span>
             </button>
-            <button class="boton-azul">
+            <button id = "consultarCuadrilla" class="boton-azul">
                 <img src="../static/img/busqueda-de-datos.png" alt="Consultar"><br>
                 <span style="font-weight: bold;">Consultar</span>
             </button>
-            <button class="boton-amarillo">
+            <button id="actualizarCuadrilla" class="boton-amarillo">
                 <img src="../static/img/actualizar.png" alt="Actualizar"><br>
                 <span style="font-weight: bold;">Actualizar</span>
             </button>
-            <button class="boton-rojo">
+            <button id="eliminarCuadrilla" class="boton-rojo">
                 <img src="../static/img/boton-eliminar.png" alt="Eliminar"><br>
                 <span style="font-weight: bold;">Eliminar</span>
             </button>
