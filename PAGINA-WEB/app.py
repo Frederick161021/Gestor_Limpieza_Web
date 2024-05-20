@@ -3,6 +3,7 @@ from model.package_model.Persona import Persona
 from model.package_model.Administrador import Administrador
 from model.package_model.Colonia import Colonia
 from model.package_model.Cuadrilla import Cuadrilla
+from model.package_model.Actividad import Actividad
 from model.package_model.UsuarioDTO import UsuarioDTO
 
 app = Flask(__name__)
@@ -240,11 +241,32 @@ def cuadrillas():
 
 @app.route('/gestionActividades', methods=['GET','POST'])
 def gestionActividades():
-    return render_template('GestionActividades.html')
+    actividad = Actividad()
+    cuadrillas = actividad.obtenerCudrillasNombre()
+    colonias = actividad.obetenerColoniasNombre()
+    return render_template('GestionActividades.html', cuadrillas = cuadrillas, colonias = colonias)
+
+@app.route('/crearActividad', methods=['POST'])
+def crearActividad():
+    data = request.json
+    descripcion = data.get('descripcion')
+    fecha = data.get('fecha')
+    cuadrillaId = data.get('cuadrillaId')
+    coloniaId = data.get('coloniaId')
+    print(descripcion)
+    print(fecha)
+    print(cuadrillaId)
+    print(coloniaId)
+
+    actividad = Actividad()
+    respuesta = actividad.agregarActividad(descripcion, fecha, cuadrillaId, coloniaId)
+    return jsonify({'respuesta': respuesta})
 
 @app.route('/actividades', methods=['GET'])
 def actividades():
-    return render_template('VerAsignaciones.html')
+    actividad = Actividad()
+    actividades = actividad.obtenerActvidades()
+    return render_template('VerAsignaciones.html', actividades = actividades)
 
 @app.route('/reporteActividades', methods=['GET', 'POST'])
 def reporteActividades():

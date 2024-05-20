@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividades</title>
+    <script src="../static/js/sweetalert2.all.min.js"></script>
+    <script src="../static/js/jquery-3.4.1.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/GestionActividades.js"></script>
     <link rel="stylesheet" href="../static/style/GestionActividades.css">
 </head>
 <body>
@@ -11,8 +15,6 @@
         <div class="lado-izquierdo">
             <h2 class="titulo">CREAR NUEVA ACTIVIDAD</h2>
             <img src="../static/img/tarea.png" class="imagen">
-            <label for="idActividad"><b>ID ACTIVIDAD:</b></label>
-            <input type="text" id="idActividad">
             <label for="descripcion"><b>Descripción:</b></label>
             <textarea id="descripcion" rows="4"></textarea>
             <label for="fechaAgendada"><b>FECHA AGENDADA:</b></label>
@@ -24,15 +26,29 @@
             <h2 class="titulo">ASIGNAR ACTIVIDAD</h2>
             <img src="../static/img/asignar.png" class="imagen">
             <label for="seleccionarCuadrilla"><b>SELECCIONAR CUADRILLA:</b></label>
-            <select id="seleccionarCuadrilla"></select>
+            <select id="seleccionarCuadrilla">
+                {% if not cuadrillas %}
+                <option value="0">Agrega Cuadrillas Primero!</option>
+                {% else %}
+                {% for cuadrilla in cuadrillas %}
+                <option value="{{cuadrilla[0]}}">{{cuadrilla[1]}}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
             <label for="seleccionarColonia"><b>SELECCIONAR COLONIA:</b></label>
-            <select id="seleccionarColonia"></select>
-            <button class="boton-amarillo">GUARDAR ASIGNACIÓN</button>
+            <select id="seleccionarColonia">
+                {% if not colonias %}
+                <option value="0">Agrega Colonias Primero!</option>
+                {% else %}
+                {% for colonia in colonias %}
+                <option value="{{colonia[0]}}">{{colonia[1]}}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
+            <button id="btnGuardarAsignacion" class="boton-amarillo">GUARDAR ASIGNACIÓN</button>
 
-  
     <button onclick="window.location.href = 'actividades';" class="boton-naranja"><b>VER ASIGNACIONES</b></button>
-
-           
+  
         </div>
     </div>
 </body>
