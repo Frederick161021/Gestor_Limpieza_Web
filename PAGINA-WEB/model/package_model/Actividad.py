@@ -70,3 +70,35 @@ class Actividad:
             cursor.close()
             db.close()
             return respuesta 
+
+    def reporteActividades(self):
+        db = Conexion()
+        con = db.connect()
+        cursor = db.cursor()
+
+        actividades = None
+        try:
+            cursor.execute('CALL getHistorialActividad()')
+            actividades = cursor.fetchall()
+        except Exception as e :
+            print('error')
+        finally:
+            cursor.close()
+            db.close()
+            return actividades
+        
+    def countEstatusActividad(self, estatusId):
+        db = Conexion()
+        con = db.connect()
+        cursor = db.cursor()
+
+        numEstatus = 0
+        try:
+            cursor.execute('CALL contarEstatus(%s)', [estatusId])
+            numEstatus = cursor.fetchall()
+        except Exception as e :
+            print('error')
+        finally:
+            cursor.close()
+            db.close()
+            return numEstatus

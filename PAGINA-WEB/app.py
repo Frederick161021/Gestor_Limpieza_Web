@@ -270,7 +270,13 @@ def actividades():
 
 @app.route('/reporteActividades', methods=['GET', 'POST'])
 def reporteActividades():
-    return render_template('ReporteActividades.html')
+    actividad = Actividad()
+    actividades = actividad.reporteActividades()
+    numEsperaConfirmacion = actividad.countEstatusActividad(1)
+    numPendiente = actividad.countEstatusActividad(2)
+    numFinalizado = actividad.countEstatusActividad(3)
+    numCancelado = actividad.countEstatusActividad(4)
+    return render_template('ReporteActividades.html', actividades = actividades, numEsperaConfirmacion = numEsperaConfirmacion, numPendiente = numPendiente, numFinalizado = numFinalizado, numCancelado = numCancelado)
 
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():
