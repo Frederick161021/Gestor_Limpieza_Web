@@ -39,12 +39,13 @@ class JefeCuadrilla(Persona):
             return trabajadores 
 
     def notificarCuadrilla(self, actividad):
-        cuadrillaId = self.getCuadrillaId(UsuarioDTO.getPersonaId())
-        trabajadores = self.getTrabajadores(cuadrillaId)
-        mensaje = "Se le a notificado de la actividad (%s) a los trabajadores:\n", actividad 
+        cuadrillaId = self.getCuadrillaId(UsuarioDTO().getPersonaId())
+        print(cuadrillaId[0][0])
+        trabajadores = self.getTrabajadores(cuadrillaId[0][0])
+        mensaje = f"Se le ha notificado de la actividad ({actividad}) a los trabajadores:\n"
+
         for trabajador in trabajadores:
-            mensaje += trabajador[0]
-            mensaje += "\n"
+            mensaje += trabajador[0] + "\n"
         
         return mensaje
 

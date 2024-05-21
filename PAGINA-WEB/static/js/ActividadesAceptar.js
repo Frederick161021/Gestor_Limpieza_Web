@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 success: function(response) {
                     Swal.fire({
                         title: "Actividad aceptada!",
-                        text: "Se ah aceptado eh iformado a todos tus empleados!",
+                        text: response.mensaje,
                         icon: "success"
                       }).then((result)=>{
                         window.location.reload();

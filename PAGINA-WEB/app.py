@@ -292,7 +292,8 @@ def actuliazarEstatusActividades():
     estatus = data.get('estatus')
     jefe = JefeCuadrilla()
     respuesta = jefe.actualizarEstatusActiviades(actividadId, estatus)
-    return jsonify({'respuesta': respuesta})
+    mensaje = jefe.notificarCuadrilla(actividadId)
+    return jsonify({'respuesta': respuesta, 'mensaje': mensaje})
 
 
 @app.route('/actividadesCompletas', methods=['GET'])
