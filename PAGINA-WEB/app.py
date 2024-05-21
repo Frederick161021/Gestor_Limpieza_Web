@@ -295,11 +295,21 @@ def actuliazarEstatusActividades():
     return jsonify({'respuesta': respuesta})
 
 
+@app.route('/actividadesCompletas', methods=['GET'])
+def actividadesCompletas():
+    print('estas aqui xd')
+    usuario = UsuarioDTO()
+    personaId = usuario.getPersonaId()
+    print(personaId)
+    persona = Persona()
+    actividades = persona.getActiviadesPorEstatus(3, personaId)
+    print(persona)
+    return render_template('ActividadesCompletas.html', actividades = actividades)
+
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():
     usuario = UsuarioDTO()
     usuario.cerroSesion()
-    print("si estoy xd")
     return jsonify({"status": "success"}), 200
 
 if __name__ == '__main__':

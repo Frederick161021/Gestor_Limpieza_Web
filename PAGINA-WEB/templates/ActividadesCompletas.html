@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE DE ACTIVIDADES</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../static/js/ReporteActividades.js"></script>
+    <link rel="stylesheet" href="../static/style/ReporteActividdaes.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../static/img/punto.png" alt="Icono" class="icon">
+            <h2 class="title">ACTIVIDADES TERMINADAS</h2>
+        </div>
+        <div class="search-section" hidden>
+            <label for="buscarEvidencia"><b>BUSCAR EVIDENCIA POR ID:</b></label>
+            <input type="text" id="buscarEvidencia">
+            <button class="boton-buscar">BUSCAR</button>
+        </div>
+        <table class="actividades-table">
+            <thead>
+                <tr>
+                    <th class="center">ID ACTIVIDAD</th>
+                    <th class="center">ACTIVIDAD</th>
+                    <th class="center">COLONIA</th>
+                    <th class="center">CODIGO POSTAL</th>
+                    <th class="center">FECHA ASIGNACION</th>
+                    <th class="center">COMENTARIOS</th>
+                    <th class="center">IMAGEN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if not actividades %}
+                {% else %}
+                {% for actividad in actividades %}
+                <tr>
+                    <td>{{actividad[0]}}</td>
+                    <td>{{actividad[1]}}</td>
+                    <td>{{actividad[2]}}</td>
+                    <td>{{actividad[4]}}</td>
+                    <td>{{actividad[3]}}</td>
+                    <td>{{actividad[5]}}</td>
+                    <td><img src="../static/img/{{actividad[6]}}" alt="imagenTrabajo" height="200px" width="200px"></td>
+                </tr>
+                {% endfor %}
+                {%endif%}
+            </tbody>
+        </table>
+        <button onclick="window.location.href = 'menuJefe';" class="return-button"><b>VOLVER</b></button>
+    </div>
+</body>
+</html>

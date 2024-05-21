@@ -40,4 +40,24 @@ class JefeCuadrilla(Persona):
         finally:
             cursor.close()
             db.close()
-            return respuesta       
+            return respuesta
+
+    def obtenerCadillaIdDelJefe(self, jefeId):
+        db = Conexion()
+        con = db.connect()
+        cursor = db.cursor()
+
+        cuadrillaId = 0
+
+        try:
+            cursor.execute('CALL actualizarEstatusActividadN(%s)', [jefeId])
+            cuadrillaId = cursor.fetchall()
+        except Exception as e : 
+            print('error')
+        finally:
+            cursor.close()
+            db.close()
+            return cuadrillaId
+        
+    
+    
