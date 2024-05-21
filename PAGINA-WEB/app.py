@@ -311,12 +311,23 @@ def setActividadId():
     data = request.json
     actividadId = data.get('actividadId')
     usuario = UsuarioDTO()
-    usuario.setActividadId('actividadId')
+    usuario.setActividadId(actividadId)
     return jsonify({'respuesta': 1})
 
 @app.route('/terminarActividad', methods=['GET'])
 def terminarActividad():
     return render_template('TerminarActividad.html')
+
+@app.route('/finalizarActividad', methods=['POST'])
+def finalizarActividad():
+    data = request.json
+    comentarios = data.get('comentarios')
+    imagen = data.get('imagen')
+
+    jefe = JefeCuadrilla()
+    respuesta = jefe.terminarActividad(comentarios, imagen)
+    return jsonify({'respuesa': respuesta})
+
 
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():
