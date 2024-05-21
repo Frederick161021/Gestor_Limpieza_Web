@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACTIVIDADES POR ACEPTAR</title>
+    <script src="../static/js/sweetalert2.all.min.js"></script>
+    <script src="../static/js/jquery-3.4.1.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/ActividadesAceptar.js"></script>
     <link rel="stylesheet" href="../static/style/ActividadesAceptar.css">
 </head>
 <body>
     <div class="container">
         <img src="../static/img/punto.png" alt="Icono" class="icon">
         <h2 class="title">ACTIVIDADES POR ACEPTAR</h2>
-        <table>
+        {% if not actividades %}
+        <h2>No hay actividaes por aceptar!</h2>
+        {% else %}
+        <table border="1">
             <thead>
                 <tr>
                     <th class="center">ID ACTIVIDAD</th>
                     <th class="center">ACTIVIDAD</th>
-                    <th class="center">COLONIA</th>
-                    <th class="center">CODIGO POSTAL</th>
+                    <th class="center">COLONIA</th>  
+                    <th class="center">CODIGO POSTAL</th>  
                     <th class="center">FECHA ASIGNACION</th>
+                    <th class="center">SELECCION</th>
                 </tr>
             </thead>
             <tbody>
+                {% for actividad in actividades %}
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{actividad[0]}}</td>
+                    <td>{{actividad[1]}}</td>
+                    <td>{{actividad[2]}}</td>
+                    <td>{{actividad[3]}}</td>
+                    <td>{{actividad[4]}}</td>
+                    <td>
+                        <button value="{{actividad[0]}}" id="aceptar" class="aceptar-button">ACEPTAR</button>
+                        <button value="{{actividad[0]}}" id="rechazar" class="rechazar-button">RECHAZAR</button>
+                    </td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
-        <button onclick="window.location.href = 'MenuAdmin.html';" class="return-button"><b>VOLVER</b></button>
+        {% endif %}
+        <button onclick="window.location.href = 'menuJefe';" class="return-button"><b>VOLVER</b></button>
         <div class="button-container">
-            <button class="aceptar-button">ACEPTAR</button>
-            <button class="rechazar-button">RECHAZAR</button>
         </div>
     </div>
 </body>

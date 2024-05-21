@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
             });
         }
         else{
-
+            
             var data = {usuario: usuario, contraseña: contraseña}
             
             $.ajax({
@@ -32,20 +32,25 @@ document.addEventListener("DOMContentLoaded", function(){
                     console.log(response.rolId);
                     switch (response.rolId){
                         case 1: 
-                            window.location = "menuAdmin";
+                        window.location = "menuAdmin";
                         break;
                         case 2: 
-                            window.location = "menuJefe";
+                        window.location = "menuJefe";
                         break;
                         case 3:
                             window.location = "actividadesPendientes";
-                        break;
-                    }
-                    
-                },
-                error: function(xhr, status, error) {
-                    
-                    console.error(xhr.responseText);
+                            break;
+                        }
+                        
+                    },
+                    error: function(xhr, status, error) {
+                        Swal.fire({
+                          icon: "error",
+                          title: "Quien eres tu?",
+                          text: "Verififca tus datos!"
+                        });
+                        
+                        // console.error(xhr.responseText);
                 }
             });
 

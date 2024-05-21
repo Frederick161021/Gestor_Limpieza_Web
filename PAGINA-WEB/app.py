@@ -4,6 +4,7 @@ from model.package_model.Administrador import Administrador
 from model.package_model.Colonia import Colonia
 from model.package_model.Cuadrilla import Cuadrilla
 from model.package_model.Actividad import Actividad
+from model.package_model.JefeCuadrilla import JefeCuadrilla
 from model.package_model.UsuarioDTO import UsuarioDTO
 
 app = Flask(__name__)
@@ -277,6 +278,22 @@ def reporteActividades():
     numFinalizado = actividad.countEstatusActividad(3)
     numCancelado = actividad.countEstatusActividad(4)
     return render_template('ReporteActividades.html', actividades = actividades, numEsperaConfirmacion = numEsperaConfirmacion, numPendiente = numPendiente, numFinalizado = numFinalizado, numCancelado = numCancelado)
+
+@app.route('/activiadesAceptar', methods=['GET', 'POST'])
+def actividadesAceptar():
+    jefe = JefeCuadrilla()
+    actividades = jefe.obtenerActiviadesPendientesAceptar()
+    return render_template('ActividadesAceptar.html', actividades = actividades)
+
+@app.route('/actualizarEstatusActividades', methods=['POST'])
+def actuliazarEstatusActividades():
+    data = request.json
+    actividadId = data.get('actividadId')
+    estatus = data.get('estatus')
+    jefe = JefeCuadrilla()
+    respuesta = jefe.actualizarEstatusActiviades(actividadId, estatus)
+    return jsonify({'respuesta': respuesta})
+
 
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():
