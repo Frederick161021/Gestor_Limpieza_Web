@@ -38,6 +38,18 @@ class UsuarioDTO():
     def getTelefono(self):
         return self._telfono
     
+    def getCuadrillaId(self):
+        return self._cuadrillaId
+    
+    def setCuadrillaId(self, cuadrillaId):
+        self._cuadrillaId = cuadrillaId
+
+    def getActividadId(self):
+        return self._actividadId
+    
+    def setActividadId(self, actividadId):
+        self._actividadId = actividadId
+    
     def setData(self, personaId, rolId, rol, nombre, apellidoPaterno, apellidoMaterno, nombreUsuario, contraseña, email, telefono):
         self._personaId = personaId
         self._rolId = rolId

@@ -37,7 +37,7 @@
                     <td>{{ actividad[2] }}</td>
                     <td>{{ actividad[3] }}</td>
                     {% if rolId == 2 %}
-                    <td><button value= "{{actividad[0]}}" style="color: white; background-color: red;">TERMINAR</button></td>
+                    <td><button id="terminar" value= "{{actividad[0]}}" style="color: white; background-color: red;">TERMINAR</button></td>
                     {% endif %}
                 </tr>
                 {% endfor %}

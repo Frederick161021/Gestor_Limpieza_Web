@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     error: function(xhr, status, error) {
                         Swal.fire({
                             icon: "error",
-                            title: "Eror al aceptar Actividad!",
+                            title: "Error al aceptar Actividad!",
                             text: "No se pudo aceptar la actividad!"
                           });
                         // console.error(xhr.responseText);
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         error: function(xhr, status, error) {
                             Swal.fire({
                                 icon: "error",
-                                title: "Eror al rechazar la Actividad!",
+                                title: "Error al rechazar la Actividad!",
                                 text: "No se pudo rechazar la actividad!"
                               });
                             // console.error(xhr.responseText);

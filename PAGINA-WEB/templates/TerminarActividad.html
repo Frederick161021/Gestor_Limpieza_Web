@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Comentarios e Imágenes</title>
+    <link rel="stylesheet" href="../static/style/TerminarActividad.css">
+</head>
+<body>
+    <h1>Subir Comentarios e Imágenes</h1>
+    <form id="uploadForm">
+        <label for="comment">Comentario:</label><br>
+        <textarea id="comment" name="comment" required></textarea><br><br>
+
+        <label for="image">Seleccionar imagen:</label><br>
+        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+
+        <input type="submit" value="Subir">
+    </form>
+
+    <button onclick="window.location.href='actividadesPendientes'">Regresar</button>
+
+    
+</body>
+</html>
+

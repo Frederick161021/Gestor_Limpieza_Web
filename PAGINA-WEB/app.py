@@ -306,6 +306,18 @@ def actividadesCompletas():
     print(persona)
     return render_template('ActividadesCompletas.html', actividades = actividades)
 
+@app.route('/setActividadId', methods=['POST'])
+def setActividadId():
+    data = request.json
+    actividadId = data.get('actividadId')
+    usuario = UsuarioDTO()
+    usuario.setActividadId('actividadId')
+    return jsonify({'respuesta': 1})
+
+@app.route('/terminarActividad', methods=['GET'])
+def terminarActividad():
+    return render_template('TerminarActividad.html')
+
 @app.route('/cerrarSeccion', methods=['GET'])
 def cerrarSeccion():
     usuario = UsuarioDTO()
